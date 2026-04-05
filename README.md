@@ -29,6 +29,3 @@ uvicorn main:app --reload
 ```
 
 Open browser: http://localhost:8000/docs
-
-## Author
-42 Heilbronn student with background in automotive industry
