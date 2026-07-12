@@ -29,3 +29,4 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
 Open browser: http://localhost:8000/docs
+DigitcalOcean: http://46.101.164.165:8000/docs
