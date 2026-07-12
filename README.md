@@ -25,7 +25,7 @@ pip install fastapi uvicorn
 
 ## Run
 ```bash
-uvicorn main:app --reload
+uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
 Open browser: http://localhost:8000/docs
