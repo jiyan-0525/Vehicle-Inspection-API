@@ -1,19 +1,21 @@
 from fastapi import FastAPI
 from .database import init_db
 import sqlite3
+from typing import Optional
 
 app = FastAPI()
 init_db()
 
-# 查询某辆车的所有检测记录
-@app.get("/inspections/{license_plate}")
-def get_inspections(license_plate: str):
+@app.get("/")
+def get_inspections(license_plate: Optional[str] = None):
     conn = sqlite3.connect("inspections.db")
     cursor = conn.cursor()
-    cursor.execute(
-        "SELECT * FROM inspections WHERE license_plate = ?",
-        (license_plate,)
-    )
+
+    if license_plate:
+        cursor.execute("SELECT * FROM inspections WHERE license_plate = ?", (license_plate,))
+    else:
+        cursor.execute("SELECT * FROM inspections")
+
     rows = cursor.fetchall()
     conn.close()
     return {"records": rows}
