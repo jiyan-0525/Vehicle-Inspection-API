@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from database import init_db
+from .database import init_db
 import sqlite3
 
 app = FastAPI()
