@@ -1,1 +1,14 @@
-venv
+# Python bytecode & cache
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+venv/
+
+# Database & runtime files
+*.db
+*.sqlite3
+
+# Environment variables & secrets
+.env
