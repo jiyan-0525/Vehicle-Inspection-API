@@ -12,7 +12,7 @@ async def get_form():
     return """
     <html>
         <body>
-            <h2>添加检测记录</h2>
+            <h2>Add Inspection Record</h2>
             <form action="/inspections" method="post">
                 License Plate: <input name="license_plate"><br>
                 Date: <input name="date"><br>
@@ -53,5 +53,5 @@ def add_inspection(
     )
     conn.commit()
     conn.close()
-    return {"message": "记录已添加"}
+    return {"message": "Record added successfully"}
 
